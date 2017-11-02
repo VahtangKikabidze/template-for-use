@@ -1,0 +1,288 @@
+/* VARS */ 
+
+$openSans: 'Open Sans', sans-serif
+$bold: 700
+$semiBold: 600
+$light: 300
+$regular: 400
+$medium: 500
+$gotham: 'gotham'
+$raleway: 'raleway'
+$fontawesome: "FontAwesome"
+
+// colors 
+$color-orange: #ff9933
+$darckSilver: #787878
+$lightSilver: #787878
+$color-blue: #1a5ab9
+$color-lightBlue: #568ee1
+$green: #57b95a
+
+@function calc-rem($px)
+	@return ($px / 16)+rem
+
+*
+	outline: none!important
+	text-decoration: none
+
+=fs($px)
+	font-size: calc-rem($px)
+	a
+		font-size: calc-rem($px)
+=color($color)
+	color: $color
+	a
+		color: $color
+=gotham_bold()
+	font-family: $gotham
+	font-weight: $bold
+	a
+		font-family: $gotham
+		font-weight: $bold
+
+=gotham_regular()
+	font-family: $gotham
+	font-weight: $regular
+	a
+		font-family: $gotham
+		font-weight: $regular
+
+=gotham_light()
+	font-family: $gotham
+	font-weight: $light
+	a
+		font-family: $gotham
+		font-weight: $light
+
+=gotham_medium()
+	font-family: $gotham
+	font-weight: $medium
+	a
+		font-family: $gotham
+		font-weight: $medium
+
+=openSans_regular()
+	font-family: $openSans
+	font-weight: $regular
+	a
+		font-family: $openSans
+		font-weight: $regular
+
+=openSans_bold()
+	font-family: $openSans
+	font-weight: $bold
+	a
+		font-family: $openSans
+		font-weight: $bold
+
+=raleway_bold()
+	font-family: $raleway
+	font-weight: $bold
+	a
+		font-family: $raleway
+		font-weight: $bold
+=btn()
+	border-radius: 45px
+	border: none
+	text-transform: uppercase
+	+openSans_bold()
+	+fs(13)
+	+color(#fff)
+	background: #e17a91
+	transition: all 200ms ease-out
+	position: relative
+	top: 0
+	box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.13)
+	padding: calc-rem(14) calc-rem(38)
+	cursor: pointer
+	&:hover
+		top: 2px
+		box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.13)
+
+
+body
+	+gotham_regular()
+	+color(#434242)
+	+fs(14)
+	min-width: 320px
+
+a,a:hover
+	text-decoration: none
+
+html
+	font-size: 16px
+
+.h1,.h2,.h3,.h4,.h5
+	+raleway_bold()
+	+color(#000)
+.h1
+	font-size: calc-rem(70)
+.h2
+	font-size: calc-rem(26)
+
+.h3
+	font-size: calc-rem(22)
+	+gotham_medium()
+	+color(#242424)
+	+fs(20)
+
+.text-blue
+	color: #2e5aca
+
+
+a,input[type="submit"]
+	transition: all 300ms ease-out
+
+.general_wrapper
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	section
+		flex: 1 0 auto
+
+
+
+.bread
+	.breadcrumb
+		background: transparent
+		.breadcrumb-item,a
+			color: #a6a6a6
+			font-size: calc-rem(14)
+			font-family: $openSans
+			font-weight: $regular
+	.breadcrumb-item+.breadcrumb-item::before
+		font-family: $fontawesome
+		content: '\f178'
+
+
+
+/* HAMBURGER */
+
+
+
+.hamburger 
+	padding: 15px 15px
+	display: inline-block
+	position: relative
+	right: 0
+	cursor: pointer
+	z-index: 1110
+	transition-property: opacity, filter
+	transition-duration: 0.15s
+	transition-timing-function: linear
+	font: inherit
+	color: inherit
+	text-transform: none
+	background-color: transparent
+	border: 0
+	margin: 0
+	overflow: visible
+	&:hover 
+		// opacity: 0.7 
+
+.hamburger-box 
+	width: 40px
+	height: 24px
+	display: inline-block
+	position: relative 
+
+.hamburger-inner 
+	display: block
+	top: 50%
+	margin-top: -2px 
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after 
+	width: 30px
+	height: 2px
+	background-color: #fff
+	//border-radius: 4px
+	position: absolute
+	transition-property: transform
+	transition-duration: 0.15s
+	transition-timing-function: ease
+.hamburger-inner::before, .hamburger-inner::after 
+	content: ""
+	display: block 
+.hamburger-inner::before 
+	top: -10px 
+.hamburger-inner::after 
+	bottom: -10px 
+
+
+/*
+   * Squeeze ANIMATION
+   */
+.hamburger--squeeze
+	.hamburger-inner 
+		transition-duration: 0.075s
+		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19) 
+		&:before 
+			transition: top 0.075s 0.12s ease, opacity 0.075s ease 
+		&:after 
+			transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19) 
+
+	&.is-active
+		.hamburger-inner 
+			transform: rotate(45deg)
+			transition-delay: 0.12s
+			transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1) 
+			&:before 
+				top: 0
+				opacity: 0
+				transition: top 0.075s ease, opacity 0.075s 0.12s ease 
+			&:after 
+				bottom: 0
+				transform: rotate(-90deg)
+				transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1) 
+
+/* END HAMBURGER */
+.form_style
+	background: #3c4348
+	border-top-right-radius: 10px
+	border-top-left-radius: 10px
+	padding: calc-rem(58) calc-rem(85)
+	padding-bottom: calc-rem(120)
+	input[type="submit"]
+		+btn()
+		margin-left: 15px
+	label
+		color: #969696
+		font-size: calc-rem(14)
+		position: absolute
+		top: 35px
+		transition: all 150ms ease-out
+		cursor: text
+		&.in_focus
+			top: 9px
+	.form-control
+		background: transparent
+		font-size: calc-rem(16)
+		color: #fff
+		border: none
+		border-bottom: 2px solid #d6d6d6
+		border-radius: 0
+		padding-left: 0
+		padding-top: calc-rem(11)
+		padding-bottom: calc-rem(11)
+		margin-top: calc-rem(25)
+
+	.block
+		&:after
+			content: ''
+			position: absolute
+			width: 0%
+			height: 2px
+			bottom: 0
+			background: #3d6ef9
+			transition: all 150ms ease-out
+		&.in_focus
+			&:after
+				width: 93%
+
+
+
+#push
+	height: 100vh
+
+
+
+
