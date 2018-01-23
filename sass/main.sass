@@ -1,6 +1,8 @@
 /* VARS */ 
 
 $openSans: 'Open Sans', sans-serif
+$PTSans: 'PT Sans', sans-serif
+$FiraSans: 'Fira Sans', sans-serif
 $bold: 700
 $semiBold: 600
 $light: 300
@@ -9,6 +11,7 @@ $medium: 500
 $gotham: 'gotham'
 $raleway: 'raleway'
 $fontawesome: "FontAwesome"
+
 
 // colors 
 $color-orange: #ff9933
@@ -27,77 +30,50 @@ $green: #57b95a
 
 =fs($px)
 	font-size: calc-rem($px)
-	a
-		font-size: calc-rem($px)
+
 =color($color)
 	color: $color
-	a
-		color: $color
+
 =gotham_bold()
 	font-family: $gotham
 	font-weight: $bold
-	a
-		font-family: $gotham
-		font-weight: $bold
-
 =gotham_regular()
 	font-family: $gotham
 	font-weight: $regular
-	a
-		font-family: $gotham
-		font-weight: $regular
-
 =gotham_light()
 	font-family: $gotham
 	font-weight: $light
-	a
-		font-family: $gotham
-		font-weight: $light
-
 =gotham_medium()
 	font-family: $gotham
 	font-weight: $medium
-	a
-		font-family: $gotham
-		font-weight: $medium
 
 =openSans_regular()
 	font-family: $openSans
 	font-weight: $regular
-	a
-		font-family: $openSans
-		font-weight: $regular
-
 =openSans_bold()
 	font-family: $openSans
 	font-weight: $bold
-	a
-		font-family: $openSans
-		font-weight: $bold
+
+=PTSans_regular()
+	font-family: $PTSans
+	font-weight: $regular
+=PTSans_bold()
+	font-family: $PTSans
+	font-weight: $bold
+
+=FiraSans_regular()
+	font-family: $FiraSans
+	font-weight: $regular
+=FiraSans_bold()
+	font-family: $FiraSans
+	font-weight: $bold
+
 
 =raleway_bold()
 	font-family: $raleway
 	font-weight: $bold
-	a
-		font-family: $raleway
-		font-weight: $bold
-=btn()
-	border-radius: 45px
-	border: none
-	text-transform: uppercase
-	+openSans_bold()
-	+fs(13)
-	+color(#fff)
-	background: #e17a91
-	transition: all 200ms ease-out
-	position: relative
-	top: 0
-	box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.13)
-	padding: calc-rem(14) calc-rem(38)
-	cursor: pointer
-	&:hover
-		top: 2px
-		box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.13)
+
+
 
 
 body
@@ -242,7 +218,6 @@ a,input[type="submit"]
 	padding: calc-rem(58) calc-rem(85)
 	padding-bottom: calc-rem(120)
 	input[type="submit"]
-		+btn()
 		margin-left: 15px
 	label
 		color: #969696

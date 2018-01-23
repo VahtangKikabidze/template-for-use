@@ -31,7 +31,7 @@ gulp.task('bower', function () {
 gulp.task('server', function() {
   gulp.src('')
     .pipe(server({
-      livereload: true,
+      livereload: false,
       defaultFile: 'template.html',
       open: true
     }));
