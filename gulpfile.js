@@ -32,8 +32,8 @@ gulp.task('server', function() {
   gulp.src('')
     .pipe(server({
       livereload: false,
-      defaultFile: 'template.html',
-      open: true
+      defaultFile: 'index.php',
+      open: false
     }));
 });
 

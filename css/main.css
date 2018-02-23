@@ -233,3 +233,22 @@ a, input[type="submit"] {
 
 #push {
   height: 100vh; }
+
+.index-page header {
+  position: absolute;
+  top: 0;
+  width: 100%; }
+
+header .row {
+  background: rgba(0, 0, 0, 0.85); }
+
+header .logo img {
+  max-width: 160px; }
+
+header .nav .nav-link {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-size: 1.1875rem;
+  color: #fff; }
+  header .nav .nav-link.active {
+    font-weight: 700; }

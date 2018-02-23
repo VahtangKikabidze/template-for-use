@@ -10,6 +10,7 @@ $regular: 400
 $medium: 500
 $gotham: 'gotham'
 $raleway: 'raleway'
+$ubuntu: 'Ubuntu', sans-serif
 $fontawesome: "FontAwesome"
 
 
@@ -46,6 +47,23 @@ $green: #57b95a
 =gotham_medium()
 	font-family: $gotham
 	font-weight: $medium
+
+
+=ubuntu_bold()
+	font-family: $ubuntu
+	font-weight: $bold
+=ubuntu_regular()
+	font-family: $ubuntu
+	font-weight: $regular
+=ubuntu_light()
+	font-family: $ubuntu
+	font-weight: $light
+=ubuntu_medium()
+	font-family: $ubuntu
+	font-weight: $medium
+
+
+
 
 =openSans_regular()
 	font-family: $openSans
@@ -257,7 +275,25 @@ a,input[type="submit"]
 
 #push
 	height: 100vh
+.index-page
+	header
+		position: absolute
+		top: 0
+		width: 100%
 
 
+header
+	.row
+		background: rgba(0,0,0,0.85)
+	.logo
+		img
+			max-width: 160px
+	.nav
+		.nav-link
+			+ubuntu_light()
+			+fs(19)
+			+color(#fff)
+			&.active
+				font-weight: $bold
 
 

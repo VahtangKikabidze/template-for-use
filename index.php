@@ -9,7 +9,7 @@
 	<link rel='shortcut icon' type='image/x-icon' href='img/favicon.png?2' />
 	<link rel="stylesheet" href="css/bootstrap.css" >
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600,700,900|PT+Sans:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="css/fonts.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.css"/>
@@ -23,24 +23,35 @@
 <script src="js/slick.js" type="text/javascript"></script>
 <script src="js/main.js" type="text/javascript"></script>
 
+<?
+    if ($_GET["page"] == "" || !isset($_GET["page"])){
+        $index_page_class = "index-page";
+    }else{
+        $index_page_class = "index-page";
+    }
+?>
 
-<div class="general_wrapper">
 
-    <header>
-        <div class="container">
-            <div class="row">
+<div class="general_wrapper <? echo $index_page_class;?>">
 
-            </div>
-        </div>
-    </header>
+    <? include ("part/header.php");?>
 
-	<footer>
-		<div class="container">
-			<div class="row">
 
-			</div>
-		</div>
-	</footer>
+
+    <?
+
+    switch ($_GET["page"]) {
+        case "catalog": include ("part/catalog.php");
+            break;
+        case "contact": include ("part/contact.php");
+            break;
+        default:  include ("part/index.php");
+    }
+
+    ?>
+
+
+    <? include ("part/footer.php");?>
 </div>
 
 </body>
